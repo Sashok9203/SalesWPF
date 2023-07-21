@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace SalesWPF
 {
@@ -15,12 +16,14 @@ namespace SalesWPF
         private readonly string[] tNames = { "Sales", "Buyers", "Sellers" };
 
         public int SelectedIndex { get; set; }
+        public int Update { get; set; }
         public ViewModel(SalesDB db)
         {
             dbase = db;
             SelectedIndex = 0;
         }
-        [DependsOn("SelectedIndex")]
+
+        [DependsOn("SelectedIndex", "Update")]
         public IEnumerable<object> Source 
         {
             get

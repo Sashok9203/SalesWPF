@@ -25,9 +25,8 @@ namespace SalesWPF
         
         public MainWindow()
         {
-            SalesDB db = new(ConfigurationManager.ConnectionStrings["connStr"].ConnectionString);
             InitializeComponent();
-           
+            SalesDB db = new(ConfigurationManager.ConnectionStrings["connStr"].ConnectionString);
             ViewModel vm = new(db);
             DataContext = vm;
         }
