@@ -1,0 +1,25 @@
+﻿<Window x:Class="SalesWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        
+    </Window.Resources>
+
+    
+    
+    <DockPanel>
+        <StackPanel  DockPanel.Dock="Top"  Margin="4" Orientation="Horizontal">
+            <Label Content="View table"/>
+            <ComboBox  Name ="selector" Width="150" HorizontalAlignment="Left" SelectedIndex="{Binding Path = SelectedIndex}" ItemsSource="{Binding Path= TablesNames,Mode=OneTime}"/>
+        </StackPanel>
+        <DataGrid Name="salesGrid"  Margin="4" ColumnWidth="Auto" AlternatingRowBackground ="AliceBlue"  ItemsSource="{Binding Path = Source, Mode = OneWay}" />
+
+    </DockPanel>
+       
+   
+</Window>
